@@ -1,11 +1,9 @@
 <template>
-    <div class="header-content">
-      <h1 class="header-heading">
-        <span class="header-heading-main">{{ main }}</span>
-        <span class="header-heading-sub">{{ sub }}</span>
-      </h1>
+  <div class="header-wrapper">
+      <span class="header-heading-main">{{ main }}</span>
+      <span class="header-heading-sub">{{ sub }}</span>
       <Button text="Explore Your Terra"/>
-    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -14,39 +12,37 @@ import Button from "./Button.vue";
 
 const main = ref("Boundless");
 const sub = ref("Discover Your Natural Freedom");
-
 </script>
 
 <style scoped>
-
-.header-content {
+.header-wrapper {
   text-align: center;
-  color: #FFF;
-  padding: 20px;
-  max-width: 1200px;
   margin: 0 auto;
-}
-
+  color: #FFF;
+  max-width: 120rem;
+  padding: 2rem;
+ }
+ 
 .header-heading-main {
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 800;
-  letter-spacing: 1.5rem;
+  letter-spacing: 3.5rem;
   display: block;
   margin-bottom: 1rem;
   text-transform: uppercase;
   animation: moveInRight 1s ease-out;
-  back-face-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .header-heading-sub {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 400;
-  letter-spacing: 0.5rem;
+  letter-spacing: .8rem;
   display: block;
   text-transform: uppercase;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
   animation: moveInLeft 1s ease-out;
-  back-face-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Animation adjustments */
@@ -55,41 +51,35 @@ const sub = ref("Discover Your Natural Freedom");
     opacity: 0;
     transform: translateX(-10rem);
   }
-
   80% {
     transform: translateX(1rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
   }
-    
 }
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
     transform: translateX(10rem);
   }
-
   80% {
     transform: translateX(-1rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
   }
-    
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 57.6rem) {
   .header-heading-main {
     font-size: 2rem;
-    letter-spacing: 0.8rem;
+    letter-spacing: 2.5rem;
   }
-
   .header-heading-sub {
     font-size: 0.8rem;
     letter-spacing: 0.5rem;

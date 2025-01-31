@@ -9,13 +9,19 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-* {
+
+*,
+*::after,
+*::after {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	box-sizing: inherit;
 }
 
+html { 
+	font-size: 62.5%;
+}
 body {
-	font-size: 16px;
-	padding: 20px;
+	padding: 2rem;
+	box-sizing: border-box;
 }

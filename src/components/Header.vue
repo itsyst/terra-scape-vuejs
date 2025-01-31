@@ -1,7 +1,7 @@
 <template>
   <header class="header" :style="{
     backgroundImage: `linear-gradient(to right bottom, 
-    rgba(249, 83, 199, 0.80), rgba(185, 29, 115, 0.80)), url(${headerImageUrl})`
+    rgba(249, 83, 199, 0.80), rgb(0, 50, 0.8)), url(${headerImageUrl})`
   }">
     <HeroImage/>
     <HeroContent/>

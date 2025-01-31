@@ -17,8 +17,8 @@ const strokeColor = ref("none");
 <style scoped>
 .header-logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 2rem;
+  left: 2rem;
 }
 
 .header-logo:hover {
@@ -26,7 +26,7 @@ const strokeColor = ref("none");
 }
 
 .header-logo_image {
-  height: 120px;
+  height: 12rem;
   width: auto;
 }
 </style>
