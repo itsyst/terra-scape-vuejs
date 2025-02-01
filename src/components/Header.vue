@@ -11,8 +11,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { storage } from "../appwrite/config";
-import HeroImage from "./HeroImage.vue"; 
-import HeroContent from "./HeroContent.vue"; 
+import HeroImage from "./hero-image.vue"; 
+import HeroContent from "./hero-content.vue"; 
 
 const headerImageUrl = ref(""); 
 

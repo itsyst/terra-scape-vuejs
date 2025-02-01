@@ -1,5 +1,5 @@
 <template>
-  <button class="btn">{{ props.text }}</button>
+  <button class="btn btn--color btn--animation">{{ props.text }}</button>
 </template>
 
 <script setup lang="ts">
@@ -12,16 +12,9 @@ const props = defineProps<{
 .btn {
     padding: 1.5rem 3rem;
     font-size: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 0.2rem solid white;
-    color: white;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
-    transition: all 0.3s ease;
     cursor: pointer;
-    animation: moveInUp .5s ease-out .75s;
-    backface-visibility: hidden;
-    animation-fill-mode: backwards;
 }
  
 .btn:hover {
@@ -33,7 +26,20 @@ const props = defineProps<{
 
 .btn:active {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-    transform: translateY(-1px);
+    transform: translateY(-.1rem);
+}
+
+.btn--color{
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 0.2rem solid white;
+    color: white;
+}
+
+.btn--animation{
+    transition: all 0.3s ease;
+    animation: moveInUp .5s ease-out .75s;
+    backface-visibility: hidden;
+    animation-fill-mode: backwards;
 }
 
 /* Animation adjustments */

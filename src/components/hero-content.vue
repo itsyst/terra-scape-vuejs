@@ -1,21 +1,21 @@
 <template>
-  <div class="header-wrapper">
-      <span class="header-heading-main">{{ main }}</span>
-      <span class="header-heading-sub">{{ sub }}</span>
-      <Button text="Explore Your Terra"/>
+  <div class="header__content">
+      <span class="header__main header__main--animation">{{ main }}</span>
+      <span class="header__sub header__sub--animation">{{ sub }}</span>
+      <Button class="header__button" text="Explore Your Terra"/>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Button from "./Button.vue"; 
+import Button from "./button.vue"; 
 
 const main = ref("Boundless");
 const sub = ref("Discover Your Natural Freedom");
 </script>
 
 <style scoped>
-.header-wrapper {
+.header__content {
   text-align: center;
   margin: 0 auto;
   color: #FFF;
@@ -23,24 +23,30 @@ const sub = ref("Discover Your Natural Freedom");
   padding: 2rem;
  }
  
-.header-heading-main {
+.header__main {
   font-size: 6rem;
   font-weight: 800;
   letter-spacing: 3.5rem;
   display: block;
   margin-bottom: 1rem;
+}
+
+.header__main--animation {
   text-transform: uppercase;
   animation: moveInRight 1s ease-out;
   backface-visibility: hidden;
 }
 
-.header-heading-sub {
+.header__sub {
   font-size: 1.8rem;
   font-weight: 400;
   letter-spacing: .8rem;
   display: block;
   text-transform: uppercase;
   margin-bottom: 6rem;
+}
+
+.header__main--animation {
   animation: moveInLeft 1s ease-out;
   backface-visibility: hidden;
 }
@@ -76,11 +82,11 @@ const sub = ref("Discover Your Natural Freedom");
 
 /* Responsive adjustments */
 @media (max-width: 57.6rem) {
-  .header-heading-main {
+  .header__main {
     font-size: 2rem;
     letter-spacing: 2.5rem;
   }
-  .header-heading-sub {
+  .header__sub {
     font-size: 0.8rem;
     letter-spacing: 0.5rem;
   }
