@@ -1,0 +1,17 @@
+.hero{
+    &__logo{position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    &__image {
+        height: 12rem;
+        width: auto;
+    
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+ 
