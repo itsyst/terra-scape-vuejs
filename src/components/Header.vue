@@ -30,16 +30,7 @@ onMounted(async () => {
   }
 });
 </script>
-
-<style scoped>
-.header {
-  height: 95vh;
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+ 
+<style scoped lang="scss">
+@use '@/sass/components/_header';
 </style>

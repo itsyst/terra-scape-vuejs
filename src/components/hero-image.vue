@@ -1,6 +1,6 @@
 <template>
-    <div class="header__logo">
-      <Logo :color="logoColor" :fill="logoFill" :stroke="strokeColor" class="logo-image" />
+    <div class="hero__logo">
+      <Logo :color="logoColor" :fill="logoFill" :stroke="strokeColor" class="hero__image" />
     </div>
 </template>
 
@@ -14,20 +14,7 @@ const logoFill = ref("none");
 const strokeColor = ref("none"); 
 </script>
    
-<style scoped>
-.header__logo {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-}
-
-.header-logo:hover {
-  transform: scale(1.2);
-}
-
-.logo-image {
-  height: 12rem;
-  width: auto;
-}
+<style scoped lang="scss">
+@use '@/sass/components/_hero';
 </style>
 

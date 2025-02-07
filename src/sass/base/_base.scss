@@ -1,0 +1,20 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Base Styles for HTML */
+html {
+    font-size: 62.5%;
+    /* Sets base font size to 10px for easier rem calculations */
+}
+
+/* Base Styles for Body */
+body {
+    box-sizing: border-box;
+}
+ 
