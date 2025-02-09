@@ -1,0 +1,73 @@
+@use '@/sass/abstracts/_variables' as vars;
+
+.feature {
+	height: auto;
+	background-image: linear-gradient(
+		to right,
+		vars.$color-primary,
+		vars.$color-secondary
+	);
+	clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
+	margin-top: -28vh;
+ 	text-align: center;
+	overflow: hidden;
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		margin: 20rem auto;
+		max-width: min-content;
+		gap: 4rem;
+	}
+	&__card {
+		background-color: vars.$color-white;
+		border-radius: 1rem;
+		margin: 0 auto;
+		padding: 2rem;
+		// box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+		text-align: center;
+	    width: 25rem;
+		height: 25rem;
+
+		&:hover {
+			transform: translate(-1rem, .5rem);
+            box-shadow: 2rem -2rem 1rem 0 rgba(0, 0, 0, .5);
+		}
+
+		&--content {
+			margin-top: 1rem;
+		}
+
+		&--description {
+			margin-top: 2rem;
+			font-size: 1.6rem;
+			color: vars.$color-grey-dark;
+		}
+	}
+
+	@media (max-width: vars.$breakpoint-md) {
+		clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+		&__cards {
+ 			grid-template-columns: repeat(3 , 1fr);
+		}
+	    &__card:nth-child(4) {
+	    	grid-column: 1 / 2; // Move the 4th card to the first column
+	    }
+
+	    &__card:nth-child(5) {
+	    	grid-column: 3 / 4; // Move the 5th card to the last column
+	    }
+	}
+
+	@media (max-width: vars.$breakpoint-sm) {
+ 
+		&__cards {
+			 grid-template-columns: 1fr;
+ 		}
+		 &__card:nth-child(4),
+		 &__card:nth-child(5) {
+		 	grid-column: unset;  
+		 }
+	}
+}
