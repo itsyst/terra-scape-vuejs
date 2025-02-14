@@ -1,11 +1,13 @@
 <template>
-  <Header/>
-  <Tours/>
-  <Features/>
+		<Header />
+		<Tours />
+		<Features />
+		<Bookings />
 </template>
 
 <script setup lang="ts">
-import Header from './components/header.vue';
-import Tours from './components/tours.vue';
-import Features from './components/features.vue';
+	import Header from './components/header.vue';
+	import Tours from './components/tours.vue';
+	import Features from './components/features.vue';
+	import Bookings from './components/bookings.vue';
 </script>
