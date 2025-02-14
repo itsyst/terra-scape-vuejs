@@ -1,4 +1,4 @@
-// src/appwrite/config.ts
+// src/utils/config.ts
 import { Client, Storage } from "appwrite";
 
 const client = new Client()
