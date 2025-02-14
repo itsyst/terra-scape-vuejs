@@ -1,64 +1,65 @@
 @use '@/sass/abstracts/_variables' as vars;
+@use '@/sass/abstracts/_mixins' as mixins;
 
 .header {
-    height: 95vh;
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-     
-    &__content {
-        text-align: center;
-        margin: 0 auto;
-        color: vars.$color-white;
-        max-width: 120rem;
-        padding: 2rem;
-    }
+	height: 95vh;
+	background-size: cover;
+	background-position: top;
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	 
+	&__content {
+		text-align: center;
+		margin: 0 auto;
+		color: vars.$color-white;
+		max-width: 120rem;
+		padding: 2rem;
+	}
 
-    &__main {
-        font-size: 6rem;
-        font-weight: 800;
-        letter-spacing: 3.5rem;
-        display: block;
-        margin-bottom: 1rem;
+	&__main {
+		font-size: 6rem;
+		font-weight: 800;
+		letter-spacing: 3.5rem;
+		display: block;
+		margin-bottom: 1rem;
 
-        &--animation {
-            text-transform: uppercase;
-            animation: moveInRight 1s ease-out;
-            backface-visibility: hidden;
-        }
-    }
+		&--animation {
+			text-transform: uppercase;
+			animation: moveInRight 1s ease-out;
+			backface-visibility: hidden;
+		}
+	}
 
-    &__sub {
-        font-size: 1.8rem;
-        font-weight: 400;
-        letter-spacing: .8rem;
-        display: block;
-        text-transform: uppercase;
-        margin-bottom: 6rem;
+	&__sub {
+		font-size: 1.8rem;
+		font-weight: 400;
+		letter-spacing: 0.8rem;
+		display: block;
+		text-transform: uppercase;
+		margin-bottom: 6rem;
 
-        &--animation {
-            animation: moveInLeft 1s ease-out;
-            backface-visibility: hidden;
-        }
-    }
+		&--animation {
+			animation: moveInLeft 1s ease-out;
+			backface-visibility: hidden;
+		}
+	}
 }
 
 /* Responsive adjustments */
-@media (max-width: 57.6rem) {
-    .header {
-        &__main {
-            font-size: 2rem;
-            letter-spacing: 2.5rem;
-        }
+@include mixins.respond(phone) {
+	.header {
+		&__main {
+			font-size: 2rem;
+			letter-spacing: 2.5rem;
+		}
 
-        &__sub {
-            font-size: 0.8rem;
-            letter-spacing: 0.5rem;
-        }
-    }
+		&__sub {
+			font-size: 0.8rem;
+			letter-spacing: 0.5rem;
+		}
+	}
 }

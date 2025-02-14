@@ -1,4 +1,5 @@
 @use '@/sass/abstracts/_variables' as vars;
+@use '@/sass/abstracts/_mixins' as mixins;
 
 .tour {
 	height: auto;
@@ -6,6 +7,7 @@
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	padding: 20rem 0 24rem 0;
 	margin-top: -20vh;
+	padding-bottom: 35rem;
 	text-align: center;
 	z-index: -1;
 
@@ -111,10 +113,10 @@
 		}
 	}
 
-	@media (max-width: vars.$breakpoint-md) {
+	@include mixins.respond(desktop) {
 		&__heading {
 			font-size: 3.5rem;
- 		}
+		}
 
 		&__cards {
 			width: 100%;
@@ -143,20 +145,36 @@
 		}
 	}
 
-	@media (max-width: vars.$breakpoint-sm) {
+	@include mixins.respond(tablet-landscape) {
+		&__card {
+			&--content {
+				padding: 0 1.5rem 2.2rem;
+			}
+		}
+	}
+
+	@include mixins.respond(phone) {
 		&__heading {
 			font-size: 2rem;
 		}
+
 		&__card {
 			flex-direction: column;
+
+			&--content {
+				padding: 0 1.5rem 3.2rem;
+			}
+
 			&--image {
 				height: 24rem;
 			}
+
 			&--title {
 				font-size: 1.8rem;
 			}
 
 			&--description {
+				padding-bottom: 1rem;
 				font-size: 1.6rem;
 			}
 		}
