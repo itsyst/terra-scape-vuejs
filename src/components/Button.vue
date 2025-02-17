@@ -1,13 +1,14 @@
 <template>
-  <button class="btn btn--color btn--animation">{{ props.text }}</button>
+	<button class="btn btn--color" :class="{ 'btn--animation': props.animate }">{{ props.text }}</button>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-    text: string
-}>();
+  const props = defineProps<{
+    text: string;
+    animate?: boolean;
+  }>();
 </script>
- 
+
 <style scoped lang="scss">
-@use '@/sass/components/_button';
+	@use '@/sass/components/_button';
 </style>

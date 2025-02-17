@@ -1,13 +1,13 @@
 <template>
 	<header class="header" :style="headerStyle">
-        <HeroImage />
+        <HeroLogo />
         <HeroContent />
 	</header>
 </template>
 
 <script setup lang="ts">
 	import { computed, onMounted } from 'vue';
-	import HeroImage from './hero-image.vue';
+	import HeroLogo from './hero-logo.vue';
 	import HeroContent from './hero-content.vue';
 	import { useHeroImage } from '../composables/useHeroImage';
      

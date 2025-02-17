@@ -4,7 +4,7 @@
 			:color="logoColor"
 			:fill="logoFill"
 			:stroke="strokeColor"
-			class="hero__image"
+			class="hero__logo--transform"
 		/>
 	</div>
 </template>
@@ -20,5 +20,5 @@
 </script>
 
 <style scoped lang="scss">
-	@use '@/sass/components/_hero';
+	@use '@/sass/components/_logo';
 </style>

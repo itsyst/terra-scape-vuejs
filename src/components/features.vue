@@ -31,8 +31,8 @@
 	const colorFill = ref('#f953c7');
 
 	// Initialize icons
-	const { initializeIcons } = useIcons();
-	initializeIcons();
+	const { featureIcons } = useIcons();
+	featureIcons();
 
 	// Feature image handling
 	const { featureImageUrl, loadFeatureImage } = useFeatureImage();

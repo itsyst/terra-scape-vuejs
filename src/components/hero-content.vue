@@ -2,7 +2,7 @@
   <div class="header__content">
       <span class="header__main header__main--animation">{{ main }}</span>
       <span class="header__sub header__sub--animation">{{ sub }}</span>
-      <Button class="header__button" text="Utforska Din Terra"/>
+      <Button class="header__button"  :animate="true"  text="Utforska Din Terra"/>
   </div>
 </template>
 
