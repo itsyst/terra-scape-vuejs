@@ -1,0 +1,214 @@
+@use '@/sass/abstracts/_variables' as vars;
+@use '@/sass/abstracts/_mixins' as mixins;
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	background-color: vars.$color-grey-dark;
+	padding: 2rem;
+
+	&__newsletter-container {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 8rem;
+		margin-bottom: 3rem;
+
+		@include mixins.respond(phone) {
+			flex-direction: column;
+			padding: 0 2rem;
+		}
+	}
+
+	&__newsletter-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: vars.$color-white;
+		font-size: 1.2rem;
+		font-weight: 600;
+
+		p {
+			width: 30vw;
+			margin-right: 1rem;
+			color: vars.$color-white;
+			font-size: 1.2rem;
+			font-weight: 600;
+			transition: color 0.3s ease-in-out;
+		}
+
+		@include mixins.respond(phone) {
+			border-bottom: 0.1rem solid vars.$color-grey;
+		}
+	}
+
+	&__newsletter-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		color: vars.$color-white;
+		margin: 0 1rem 0 0;
+		width: 39rem;
+		gap: 1rem;
+
+		@include mixins.respond(phone) {
+			width: 100%;
+			margin-top: 0.5rem;
+		}
+
+		&--header {
+			h3 {
+				color: vars.$color-primary;
+				text-transform: uppercase;
+				font-size: 1.5rem;
+				font-weight: 700;
+				margin: 0;
+			}
+
+			p {
+				margin: 0;
+				font-size: 1rem;
+			}
+		}
+
+		&--content {
+			border: none;
+			padding: 0;
+
+			label {
+				font-weight: 700;
+				font-size: 1rem;
+				margin: 0.5rem 0;
+				display: block;
+			}
+
+			input[type='email'] {
+				width: 100%;
+				padding: 0.5rem;
+				border: 1px solid vars.$color-grey;
+				border-radius: 4px;
+				background-color: vars.$color-white;
+				color: vars.$color-grey-dark;
+			}
+
+			&-submit {
+				button {
+					padding: 0.8rem;
+					margin-top: 1rem;
+					border: none;
+					border-radius: 1.5rem !important;
+					background-color: vars.$color-grey;
+					color: vars.$color-white;
+					cursor: pointer;
+					transition: background-color 0.3s ease;
+
+					&:hover {
+						background-color: vars.$color-black;
+					}
+					&:disabled {
+						opacity: 0.7;
+						cursor: not-allowed;
+					}
+				}
+			}
+		}
+	}
+
+	&__logo {
+		width: 15rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		width: 100%;
+		padding: 0 10rem;
+
+		@include mixins.respond(desktop) {
+			flex-direction: column;
+			padding: 0 2rem;
+		}
+	}
+	&__nav {
+		border-top: 0.1rem solid vars.$color-grey;
+		margin-bottom: 1.5rem;
+	}
+
+	&__nav-items {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		margin-top: 0.5rem;
+	}
+
+	&__nav-item {
+		&--link {
+			text-decoration: none;
+			color: vars.$color-white;
+			font-size: 1rem;
+			text-transform: uppercase;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: vars.$color-primary;
+			}
+		}
+	}
+
+	&__touch {
+		border-top: 0.1rem solid vars.$color-grey;
+	}
+
+	&__copyright {
+		margin-bottom: 1.5rem;
+		margin-top: 0.5rem;
+	}
+	&__author {
+		text-transform: uppercase;
+		color: vars.$color-primary;
+		text-decoration: none;
+	}
+	&__social-media {
+		display: flex;
+		gap: 1rem;
+		justify-content: end;
+		justify-items: center;
+		align-items: center;
+		margin-top: 1.5rem;
+
+		@include mixins.respond(phone) {
+			justify-content: center;
+			padding: 0 2rem;
+		}
+
+		&-icon {
+			svg {
+				&:hover,
+				&:focus {
+					fill: vars.$color-white !important;
+				}
+			}
+		}
+	}
+}
+
+.success-message {
+	color: green;
+	margin-top: 0.5rem;
+}
+
+.error-message {
+	color: red;
+	margin-top: 0.5rem;
+}
+
+.subscription-message {
+	margin-top: 1rem;
+	color: #4caf50;
+	font-weight: bold;
+	animation: fadeOut 5s forwards;
+}

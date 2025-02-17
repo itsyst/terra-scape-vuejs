@@ -38,6 +38,7 @@
 			<p class="booking__card--back-price">{{ booking.price }}&nbsp;Kr</p>
 			<Button
 				class="booking__button"
+				:animate="false"
 				text="Boka nu!"
 				@click="emit('handlePayment', booking)"
 			/>

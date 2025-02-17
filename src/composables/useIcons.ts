@@ -5,11 +5,15 @@ import {
     GiCompass,
     OiRocket,
     LaMapMarkedAltSolid,
-    RiMentalHealthLine
+    RiMentalHealthLine,
+    BiGithub,
+    BiLinkedin,
+    BiXSquareFill  
+
 } from 'oh-vue-icons/icons';
 
 export function useIcons() {
-    const initializeIcons = () => {
+    const featureIcons = () => {
         addIcons(
             BiGlobe,
             GiCompass,
@@ -19,5 +23,13 @@ export function useIcons() {
         );
     };
 
-    return { initializeIcons };
+    const socialMediaIcons = () => {
+        addIcons(
+            BiGithub,
+            BiLinkedin,
+            BiXSquareFill 
+        );
+    };
+
+    return { featureIcons, socialMediaIcons };
 }
