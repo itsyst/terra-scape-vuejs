@@ -35,5 +35,12 @@ export const TESTIMONIAL_CONFIG: Omit<Testimonial, 'avatar'>[] = [
 		name: 'Karin Olsson',
 		role: 'Projektledare, ByggVision',
 		type: 'TESTIMONIAL05'
+	},
+	{
+		id: 6,
+		text: 'Exceptionell kundsupport och lösningar som förenklar vår vardag.',
+		name: 'Lars Gustafsson',
+		role: 'Verksamhetschef, Framtid Innovation',
+		type: 'TESTIMONIAL06'
 	}
 ];

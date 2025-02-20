@@ -64,11 +64,14 @@
 	let autoPlayInterval: number | null = null;
 
 	const next = () => {
-		if (currentIndex.value < props.items.length - props.itemsPerView) {
-			isAnimating.value = true;
+		const maxIndex = props.items.length - props.itemsPerView;
+		isAnimating.value = true;
+		if (currentIndex.value < maxIndex) {
 			currentIndex.value += 1;
-			resetAnimation();
+		} else {
+			currentIndex.value = 0;
 		}
+		resetAnimation();
 	};
 
 	const prev = () => {
@@ -94,6 +97,7 @@
 	};
 
 	const startAutoPlay = () => {
+		stopAutoPlay();
 		if (props.autoPlay && props.items.length > props.itemsPerView) {
 			autoPlayInterval = setInterval(() => {
 				if (currentIndex.value >= props.items.length - props.itemsPerView) {
