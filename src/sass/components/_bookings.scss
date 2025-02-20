@@ -5,6 +5,7 @@
 .booking {
 	height: auto;
 	background-color: vars.$color-grey-light;
+	padding: 0 0 12rem 0; 
 	text-align: center;
 	margin-top: -14vh;
 
@@ -25,6 +26,7 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+		
 
 		@include mixins.respond(phone) {
 			font-size: 2rem;

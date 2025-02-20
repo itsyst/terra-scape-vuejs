@@ -2,9 +2,10 @@
 import { storage } from '../utils/config';
 import type { TourType } from "../types/tours";
 import type { BookingType } from '../types/booking';
+import type { TestimonialType } from '../types/testimonials';
  
 export function useImageFetcher() {
-    const fetchImage = async (tourType: TourType | BookingType): Promise<string> => {
+    const fetchImage = async (tourType: TourType | BookingType | TestimonialType): Promise<string> => {
         try {
             const fileId = import.meta.env[`VITE_APPWRITE_${tourType}_ID`];
   

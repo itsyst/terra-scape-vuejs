@@ -3,6 +3,7 @@
 	<Tours />
 	<Features />
 	<Bookings />
+	<Testimonials />
 	<Footer />
 </template>
 
@@ -12,4 +13,5 @@
 	import Features from './components/features.vue';
 	import Bookings from './components/bookings.vue';
 	import Footer from './components/footer.vue';
+	import Testimonials from './components/testimonials.vue';
 </script>
