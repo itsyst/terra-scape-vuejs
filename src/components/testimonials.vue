@@ -8,18 +8,25 @@
 			<template #default="{ item }">
 				<div class="testimonial-card">
 					<div class="testimonial-card__content">
-						<p class="testimonial-card__text">"{{ item.text }}"</p>
 						<div class="testimonial-card__author">
-							<img
-								:src="item.src"
-								loading="lazy"
-								:alt="item.name"
-								class="testimonial-card__avatar"
-							/>
-							<div class="author-info">
-								<span class="author-name">{{ item.name }}</span>
-								<span class="author-role">{{ item.role }}</span>
+							<figure class="testimonial-card__avatar">
+								<img
+									:src="item.src"
+									loading="lazy"
+									:alt="item.name"
+									class="testimonial-card__avatar-img"
+								/>
+							</figure>
+							<div class="testimonial-card__author-info">
+								<span class="testimonial-card__author-name">{{ item.name }}</span>
+								<span class="testimonial-card__author-role">{{ item.role }}</span>
 							</div>
+						</div>
+						<div class="testimonial-card__reflection">
+							<h3 class="testimonial-card__reflection-header">{{ item.header }}</h3>
+							<p class="testimonial-card__reflection-description">
+								❞{{ item.description }}❝
+							</p>
 						</div>
 					</div>
 				</div>

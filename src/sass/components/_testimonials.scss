@@ -12,81 +12,94 @@
 	width: 100%;
 
 	&__header {
-		font-size: 3rem;
-		text-transform: uppercase;
-		text-shadow: 0 0.5rem 1rem rgba(vars.$color-black, 0.3);
-		font-weight: 700;
-		letter-spacing: 0.2rem;
 		margin: -4rem 0 10rem;
-		background-image: linear-gradient(
-			to right,
-			vars.$color-primary,
-			vars.$color-secondary
-		);
-		display: inline-block;
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		z-index: 1;
 	}
 
 	&__title {
 		font-size: 3rem;
 		font-weight: 700;
+		text-transform: uppercase;
+		text-shadow: 0 0.5rem 1rem rgba(vars.$color-black, 0.3);
+		letter-spacing: 0.2rem;
+		background-image: linear-gradient(to right,
+				vars.$color-primary,
+				vars.$color-secondary);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 		margin: 0;
 	}
 }
 
 .testimonial-card {
-	background: white;
-	border-radius: 12px;
+	background: vars.$color-white;
+	border-radius: 1.2rem;
 	padding: 2rem;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0.4rem 0.6rem rgba(vars.$color-black, 0.3);
 	height: 100%;
 
 	&__content {
-		text-align: start;
 		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-	}
-
-	&__text {
-		font-size: 1.8rem;
-		font-style: italic;
-		font-weight: 500;
-		color: #475569;
-		line-height: 1.6;
-		margin: 0;
+		align-items: center;
+		justify-content: center;
+		gap: 3rem;
 	}
 
 	&__author {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
 	}
 
 	&__avatar {
-		width: 5rem;
-		height: 5rem;
-		border-radius: 50%;
-		object-fit: cover;
+		margin: 0;
+		padding: 0;
+
+		&-img {
+			width: 10rem;
+			height: 10rem;
+			border-radius: 50%;
+			object-fit: cover;
+		}
 	}
-}
 
-.author-info {
-	display: flex;
-	flex-direction: column;
-	margin-left: 1rem;
+	&__author-info {
+		display: flex;
+		flex-direction: column;
+	}
 
-	.author-name {
+	&__author-name {
 		font-size: 1.2rem;
 		font-weight: 700;
-		color: #1e293b;
+		color: vars.$color-blue-light;
 	}
 
-	.author-role {
+	&__author-role {
 		font-size: 0.9rem;
-		color: #64748b;
+		color: vars.$color-grey;
+		font-style: italic;
+	}
+
+	&__reflection {
+		display: flex;
+		flex-direction: column;
+ 	}
+
+	&__reflection-header {
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: vars.$color-blue-light;
+		line-height: 1.6;
+		margin: 1rem 0;
+	}
+
+	&__reflection-description {
+		font-size: 1.2rem;
+		font-style: italic;
+		font-weight: 500;
+		color: vars.$color-blue-light;
+		line-height: 1.6;
+		margin: 0;
 	}
 }

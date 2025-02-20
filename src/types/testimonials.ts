@@ -8,7 +8,8 @@ export type TestimonialType =
 
 export interface Testimonial {
 	id: number;
-	text: string;
+	header: string;
+	description: string;
 	name: string;
 	role: string;
 	avatar?: string;
