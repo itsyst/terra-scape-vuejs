@@ -5,7 +5,7 @@
 				<div class="footer__logo">
 					<Logo :color="logoColor" :fill="logoFill" :stroke="strokeColor" />
 				</div>
-				<p>
+				<p class="footer__desc">
 					Få de senaste nyheterna om våra naturäventyr. Vi lovar att hålla din
 					e-post säker och privat – ingen delning, inga annonser, bara
 					fantastiska upplevelser.

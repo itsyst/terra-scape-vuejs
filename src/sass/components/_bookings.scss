@@ -5,7 +5,7 @@
 .booking {
 	height: auto;
 	background-color: vars.$color-grey-light;
-	padding: 0 0 12rem 0; 
+	padding: 0 0 18rem 0;
 	text-align: center;
 	margin-top: -14vh;
 
@@ -26,7 +26,6 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		
 
 		@include mixins.respond(phone) {
 			font-size: 2rem;
@@ -41,11 +40,13 @@
 		padding: 5rem 0;
 		gap: 4rem;
 
-		@include mixins.respond(desktop) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+		@include mixins.respond(tablet-landscape) {
+			grid-template-columns: repeat(2, 1fr);  
+  		}
+
 		@include mixins.respond(phone) {
-			grid-template-columns: 1fr;
+			grid-template-columns: 1fr;  
+ 			max-width: 100%;  
 		}
 	}
 
