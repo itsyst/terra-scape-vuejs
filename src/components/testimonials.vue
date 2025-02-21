@@ -9,21 +9,27 @@
 				<div class="testimonial-card">
 					<div class="testimonial-card__content">
 						<div class="testimonial-card__author">
-							<figure class="testimonial-card__avatar">
+							<figure class="testimonial-card__author-avatar">
 								<img
 									:src="item.src"
 									loading="lazy"
 									:alt="item.name"
-									class="testimonial-card__avatar-img"
+									class="testimonial-card__author-avatar-img"
 								/>
+								<figcaption class="testimonial-card__author-caption">
+									<span class="testimonial-card__author-caption--name">{{
+										item.name
+									}}</span>
+									<span class="testimonial-card__author-caption--role">{{
+										item.role
+									}}</span>
+								</figcaption>
 							</figure>
-							<div class="testimonial-card__author-info">
-								<span class="testimonial-card__author-name">{{ item.name }}</span>
-								<span class="testimonial-card__author-role">{{ item.role }}</span>
-							</div>
 						</div>
 						<div class="testimonial-card__reflection">
-							<h3 class="testimonial-card__reflection-header">{{ item.header }}</h3>
+							<h3 class="testimonial-card__reflection-header">{{
+								item.header
+							}}</h3>
 							<p class="testimonial-card__reflection-description">
 								❞{{ item.description }}❝
 							</p>
