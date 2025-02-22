@@ -2,7 +2,7 @@
 @use '@/sass/abstracts/_mixins' as mixins;
 
 .feature {
-	height: auto;
+	min-height: 55vh;
 	background-size: cover;
 	background-position: top;
 	background-repeat: no-repeat;

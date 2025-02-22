@@ -4,7 +4,7 @@
 		<div class="feature__video">
 			<video class="feature__video-content" autoplay loop muted playsinline>
 				<source src="../assets/video_bg.mp4" type="video/mp4" />
- 			</video>
+			</video>
 			<div class="feature__video-overlay"></div>
 		</div>
 		<div class="feature__cards">
@@ -41,8 +41,7 @@
 	featureIcons();
 
 	// Feature image handling
-	const { featureImageUrl, loadFeatureImage } =
-		useFeatureImage();
+	const { featureImageUrl, loadFeatureImage } = useFeatureImage();
 
 	// Features data - Computed features with dynamic color
 	const features = computed(() => getFeaturesConfig(colorFill.value));

@@ -2,7 +2,7 @@
 @use '@/sass/abstracts/_mixins' as mixins;
 
 .tour {
-	height: auto;
+	min-height: 85vh;
 	background-color: vars.$color-white;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	padding: 20rem 0 24rem 0;
@@ -10,9 +10,9 @@
 	padding-bottom: 35rem;
 	text-align: center;
 	z-index: -1;
-
+ 
 	&__heading {
-		font-size: 3rem;
+ 		font-size: 3rem;
 		text-transform: uppercase;
 		text-shadow: 0 0.5rem 1rem rgba(vars.$color-black, 0.3);
 		font-weight: 700;

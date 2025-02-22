@@ -3,12 +3,18 @@
 @use 'sass:color';
 
 .booking {
-	height: auto;
+	min-height: 55vh;
 	background-color: vars.$color-grey-light;
-	padding: 0 0 18rem 0;
+	padding: 0 0 12rem 0;
 	text-align: center;
-    margin-top: -14vh;
- 
+	margin-bottom: -14vh;
+	transform: skewY(-7deg);
+	z-index: 1;
+
+	& > * {
+		transform: skewY(7deg);
+	}
+
 	&__heading {
 		margin-top: 22rem;
 		font-size: 3rem;
@@ -40,13 +46,26 @@
 		padding: 5rem 0;
 		gap: 4rem;
 
+		@include mixins.respond(desktop) {
+			& {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			& :nth-child(4) {
+				grid-column: 1 / 2; // Move the 4th card to the first column
+			}
+		}
 		@include mixins.respond(tablet-landscape) {
-			grid-template-columns: repeat(2, 1fr);  
-  		}
+			& {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
 
 		@include mixins.respond(phone) {
-			grid-template-columns: 1fr;  
- 			max-width: 100%;  
+			& {
+				grid-template-columns: 1fr;
+				max-width: 100%;
+			}
 		}
 	}
 

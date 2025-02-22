@@ -2,9 +2,7 @@
 @use '@/sass/abstracts/_mixins' as mixins;
 
 .testimonials {
-	height: auto;
-	margin: -24vh auto 0 0;
-	clip-path: polygon(0 26%, 100% 0, 100% 100%, 0 100%);
+ 	min-height: 45vh;
 	padding: 20rem 0;
 	background-size: cover;
 	background-position: top;
@@ -16,7 +14,7 @@
 	}
 
 	&__title {
-		font-size: 3rem;
+ 		font-size: 3rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		text-shadow: 0 0.5rem 1rem rgba(vars.$color-black, 0.3);
