@@ -39,6 +39,19 @@
 			</template>
 		</Carousel>
 	</section>
+	<!-- Scroll Up Button -->
+	<button class="testimonials__scroll-up" @click="scrollToHeader">
+		<svg
+			width="25"
+			height="25"
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			class="stroke-[2] relative"
+		>
+			<path d="M5 11L12 4M12 4L19 11M12 4V21" stroke="white"></path>
+		</svg>
+	</button>
 </template>
 
 <script setup lang="ts">
@@ -54,12 +67,18 @@
 
 	const backgroundStyle = computed(() => ({
 		backgroundImage: `linear-gradient(
-		to right bottom, 
-        rgba(0, 50, 1, 0.1), 
-        rgba(0, 50, 199, 0.1)), 
+		to right, 
+        rgba(0, 50, 1, 0.5), 
+        rgba(0, 50, 199, 0.5)), 
 		url(${testimonialsImageUrl.value})`
 	}));
 
+	const scrollToHeader = () => {
+		const header = document.getElementById('main-header');
+		if (header) {
+			header.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
 	onMounted(async () => {
 		await loadTestimonials();
 		await loadTestimonialsImage();

@@ -1,6 +1,6 @@
 <!-- src/components/TourSection.vue -->
 <template>
-  <section class="tour">
+  <section class="tour" id="tour-section">
     <h2 class="tour__heading">Äventyrs-hajk för de som vågar!</h2>
     <div class="tour__cards">
       <div v-for="(tour, index) in tours" :key="index" class="tour__card">

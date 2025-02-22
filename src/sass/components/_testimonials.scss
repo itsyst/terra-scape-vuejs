@@ -3,8 +3,8 @@
 
 .testimonials {
 	height: auto;
-	margin: -22vh auto 0 0;
-	clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+	margin: -24vh auto 0 0;
+	clip-path: polygon(0 26%, 100% 0, 100% 100%, 0 100%);
 	padding: 20rem 0;
 	background-size: cover;
 	background-position: top;
@@ -12,7 +12,7 @@
 	width: 100%;
 
 	&__header {
-		padding-bottom: 9rem;
+		padding: 9rem 0;
 	}
 
 	&__title {
@@ -22,20 +22,46 @@
 		text-shadow: 0 0.5rem 1rem rgba(vars.$color-black, 0.3);
 		letter-spacing: 0.2rem;
 		background-image: linear-gradient(
-			to right,
-			vars.$color-primary,
-			vars.$color-secondary
+			to right bottom,
+			rgba(vars.$color-white, 1),
+			rgba(vars.$color-primary, 0.8)
 		);
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		margin: 0;
+
+		@include mixins.respond(phone) {
+			font-size: 2rem;
+		}
+	}
+
+	&__scroll-up {
+		position: fixed;
+		bottom: 4rem;
+		right: 4rem;
+		background-color: vars.$color-primary;
+		color: vars.$color-white;
+		border: none;
+		border-radius: 50%;
+		width: 4rem;
+		height: 4rem;
+		font-size: 2rem;
+		cursor: pointer;
+		box-shadow: 0 0.2rem 0.4rem rgba(vars.$color-black, 0.3);
+		transition: transform 0.3s ease, background-color 0.3s ease;
+		z-index: 10;
+		/* Above other content */
+
+		&:hover {
+			transform: scale(1.1);
+			background-color: darken(vars.$color-black, 10%);
+		}
 	}
 
 	@include mixins.respond(tablet-landscape) {
 		clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 	}
-
 	@include mixins.respond(phone) {
 		margin: -19vh auto 0 0;
 		clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);

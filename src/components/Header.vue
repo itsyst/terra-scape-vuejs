@@ -1,7 +1,7 @@
 <template>
-	<header class="header" :style="headerStyle">
-        <HeroLogo />
-        <HeroContent />
+	<header class="header" id="main-header" :style="headerStyle">
+		<HeroLogo />
+		<HeroContent />
 	</header>
 </template>
 
@@ -10,7 +10,7 @@
 	import HeroLogo from './hero-logo.vue';
 	import HeroContent from './hero-content.vue';
 	import { useHeroImage } from '../composables/useHeroImage';
-     
+
 	const { headerImageUrl, loadHeroImage } = useHeroImage();
 
 	const headerStyle = computed(() => ({

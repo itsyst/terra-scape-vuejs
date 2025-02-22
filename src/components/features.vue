@@ -1,6 +1,12 @@
 <!-- src/components/FeatureSection.vue -->
 <template>
 	<section class="feature" :style="backgroundStyle">
+		<div class="feature__video">
+			<video class="feature__video-content" autoplay loop muted playsinline>
+				<source src="../assets/video_bg.mp4" type="video/mp4" />
+ 			</video>
+			<div class="feature__video-overlay"></div>
+		</div>
 		<div class="feature__cards">
 			<div
 				v-for="(feature, index) in features"
@@ -23,7 +29,7 @@
 <script setup lang="ts">
 	import { onMounted, computed, ref } from 'vue';
 	import { OhVueIcon } from 'oh-vue-icons';
-	import { getFeaturesConfig  } from '../constants/features';
+	import { getFeaturesConfig } from '../constants/features';
 	import { useIcons } from '../composables/useIcons';
 	import { useFeatureImage } from '../composables/useFeatureImage';
 
@@ -35,25 +41,28 @@
 	featureIcons();
 
 	// Feature image handling
-	const { featureImageUrl, loadFeatureImage } = useFeatureImage();
+	const { featureImageUrl, loadFeatureImage } =
+		useFeatureImage();
 
 	// Features data - Computed features with dynamic color
 	const features = computed(() => getFeaturesConfig(colorFill.value));
 
-	// Background style
+	// Background style for fallback
 	const backgroundStyle = computed(() => ({
 		backgroundImage: `linear-gradient(
 		to right bottom, 
-        rgba(249, 83, 199, 0.5), 
-        rgba(0, 50, 1, 0.8)), 
-		url(${featureImageUrl.value})`
+		rgba(249, 83, 199, 0.5), 
+		rgba(0, 50, 1, 0.8)), 
+		url(${featureImageUrl.value})`,
+		backgroundSize: 'cover',
+		backgroundPosition: 'top',
+		backgroundRepeat: 'no-repeat'
 	}));
 
 	// Initialize component
 	onMounted(async () => {
 		await loadFeatureImage();
 	});
-
 </script>
 
 <style lang="scss" scoped>
