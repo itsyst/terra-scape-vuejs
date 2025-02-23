@@ -1,3 +1,5 @@
+@use '@/sass/abstracts/_mixins' as mixins;
+
 .hero {
 	&__logo {
 		position: absolute;
@@ -10,6 +12,20 @@
 
 			&:hover {
 				transform: scale(1.2);
+			}
+
+			@include mixins.respond(tablet-landscape) {
+				& {
+					height: 8rem;
+				}
+			}
+		}
+
+		/* Responsive adjustments */
+		@include mixins.respond(tablet-landscape) {
+			& {
+				top: 0.5rem;
+				left: 0.5rem;
 			}
 		}
 	}

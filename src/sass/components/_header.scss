@@ -11,7 +11,7 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 1;
-	 
+
 	&__content {
 		text-align: center;
 		margin: 0 auto;
@@ -50,6 +50,16 @@
 }
 
 /* Responsive adjustments */
+@include mixins.respond(tablet-landscape) {
+	.header {
+		&__sub {
+ 
+			&--animation {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+}
 @include mixins.respond(phone) {
 	.header {
 		&__main {
@@ -60,6 +70,10 @@
 		&__sub {
 			font-size: 0.8rem;
 			letter-spacing: 0.5rem;
+
+			&--animation {
+				margin-bottom: 4rem;
+			}
 		}
 	}
 }
