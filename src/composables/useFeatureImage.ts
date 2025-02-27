@@ -4,7 +4,7 @@ import { storage } from '../utils/config';
  
 export function useFeatureImage() {
     const featureImageUrl = ref('');
-    const fallbackImage = import.meta.env.VITE_FALLBACK_FEATURE_IMAGE_URL;
+    const fallbackImage = import.meta.env.VITE_FALLBACK_IMAGE_URL;
 
     const loadFeatureImage = async () => {
         try {

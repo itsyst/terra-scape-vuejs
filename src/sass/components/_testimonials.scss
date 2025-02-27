@@ -1,5 +1,6 @@
 @use '@/sass/abstracts/_variables' as vars;
 @use '@/sass/abstracts/_mixins' as mixins;
+@use 'sass:color';
 
 .testimonials {
  	min-height: 45vh;
@@ -53,7 +54,7 @@
 
 		&:hover {
 			transform: scale(1.1);
-			background-color: darken(vars.$color-black, 10%);
+			background-color:color.adjust(vars.$color-black, $lightness: -10%);;
 		}
 	}
 

@@ -51,13 +51,14 @@
 
 		@include mixins.respond(desktop) {
 			& {
-				grid-template-columns: repeat(3, 1fr);
-			}
+				grid-template-columns: repeat(2, 1fr);
+ 			}
 
-			& :nth-child(4) {
-				grid-column: 1 / 2; // Move the 4th card to the first column
-			}
+			// & :nth-child(4) {
+			// 	grid-column: 1 / 2; // Move the 4th card to the first column
+			// }
 		}
+ 
 		@include mixins.respond(tablet-landscape) {
 			& {
 				grid-template-columns: repeat(2, 1fr);
@@ -67,7 +68,6 @@
 		@include mixins.respond(phone) {
 			& {
 				grid-template-columns: 1fr;
-				max-width: 100%;
 			}
 		}
 	}

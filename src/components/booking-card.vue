@@ -40,7 +40,7 @@
 				class="booking__button"
 				:animate="false"
 				text="Boka nu!"
-				@click="emit('handlePayment', booking)"
+				@click="emit('openPopup', booking)"
 			/>
 		</div>
 	</div>
@@ -56,7 +56,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(event: 'handlePayment', booking: Booking): void;
+		(event: 'openPopup', booking: Booking): void;
 	}>();
 
 	// Background style

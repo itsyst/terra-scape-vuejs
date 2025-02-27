@@ -33,9 +33,23 @@ export function usePayPal() {
 				throw new Error('Invalid order response');
 			}
 
-			window.location.href = `${
-				import.meta.env.VITE_PAYPAL_URL
-			}/checkoutnow?token=${order.id}`;
+			// Window dimensions
+			const width = 500;
+			const height = 800;
+
+			// Calculate position to center the window
+			const left = (window.screen.width - width) / 2;
+			const top = (window.screen.height - height) / 2;
+
+			// Open payment URL in a new centered window
+			const paymentUrl = `${import.meta.env.VITE_PAYPAL_URL}/checkoutnow?token=${
+				order.id
+			}`;
+			window.open(
+				paymentUrl,
+				'_blank',
+				`noopener,noreferrer,width=${width},height=${height},left=${left},top=${top}`
+			);
 		} catch (error) {
 			console.error('Payment failed:', error);
 			throw new Error('Payment initialization failed');

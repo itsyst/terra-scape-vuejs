@@ -4,7 +4,7 @@ import { storage } from '../utils/config';
  
 export function useTestimonialsImage() {
     const testimonialsImageUrl = ref('');
-    const fallbackImage = import.meta.env.VITE_FALLBACK_FEATURE_IMAGE_URL;
+    const fallbackImage = import.meta.env.VITE_FALLBACK_IMAGE_URL;
 
     const loadTestimonialsImage = async () => {
         try {

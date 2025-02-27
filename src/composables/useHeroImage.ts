@@ -5,7 +5,7 @@ import { storage } from '../utils/config';
 
 export function useHeroImage() {
 	const headerImageUrl = ref<string>('');
-	const fallbackImage = import.meta.env.VITE_FALLBACK_HERO_IMAGE_URL;
+	const fallbackImage = import.meta.env.VITE_FALLBACK_IMAGE_URL;
 
 	const loadHeroImage = async (type: HeroImageType = 'HERO') => {
 		try {

@@ -54,7 +54,7 @@
 		</section>
 
 		<!-- Info Section -->
-		<section class="footer__info">
+		<section class="footer__newsletter-container">
 			<nav class="footer__nav">
 				<ul class="footer__nav-items">
 					<li class="footer__nav-item">
