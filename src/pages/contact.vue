@@ -1,5 +1,5 @@
 <template>
-	<section class="contact-page" id="page-contact">
+	<section class="contact-page" id="contact">
 		<h1 class="contact-page__title">Kontakta oss</h1>
 		<p class="contact-page__intro">
 			Har du frågor som pirrar i själen om våra äventyr, eller är du redo att

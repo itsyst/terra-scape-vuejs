@@ -169,7 +169,7 @@
 	};
 
 	const scrollToHeader = () => {
-		const header = document.getElementById('main-header');
+        const header = document.getElementById('home');
 		if (header) {
 			header.scrollIntoView({ behavior: 'smooth' });
 		}

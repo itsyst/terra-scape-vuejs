@@ -1,5 +1,5 @@
 <template>
-	<section class="page-about" id="page-about">
+	<section class="page-about" id="about">
 		<h1 class="page-about__title">Om oss</h1>
 		<p>
 			Välkommen till Scapeterra – där äventyret börjar och vardagen bleknar bort

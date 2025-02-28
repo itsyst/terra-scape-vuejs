@@ -7,17 +7,26 @@
 				:scale="menuConfig[0].scale"
 			/>
 		</button>
-<div class="menu" :class="{ 'is-open': isOpen }">
-			<router-link :to="{ path: '/', hash: '#main-header' }" @click="closeMenu">
+		<div class="menu" :class="{ 'is-open': isOpen }">
+			<router-link :to="{ path: '/', hash: '#home' }" @click="closeMenu">
 				Hem
 			</router-link>
-			<router-link :to="{ path: '/about', hash: '#page-about' }" @click="closeMenu">
+			<router-link
+				:to="{ path: '/about', hash: '#about' }"
+				@click="closeMenu"
+			>
 				Om oss
 			</router-link>
-			<router-link :to="{ path: '/contact', hash: '#page-contact' }" @click="closeMenu">
+			<router-link
+				:to="{ path: '/contact', hash: '#contact' }"
+				@click="closeMenu"
+			>
 				Kontakta oss
 			</router-link>
-			<router-link :to="{ path: '/policy', hash: '#page-policy' }" @click="closeMenu">
+			<router-link
+				:to="{ path: '/policy', hash: '#policy' }"
+				@click="closeMenu"
+			>
 				Sekretesspolicy
 			</router-link>
 		</div>
@@ -26,7 +35,7 @@
 
 <script setup lang="ts">
 	import { ref, computed } from 'vue';
- 	import { OhVueIcon } from 'oh-vue-icons';
+	import { OhVueIcon } from 'oh-vue-icons';
 	import { useIcons } from '../composables/useIcons';
 	import { getMenuConfig } from '../constants/menu-hamburger';
 
@@ -42,7 +51,7 @@
 
 	// Menu toggle state
 	const isOpen = ref(false);
- 
+
 	// Toggle menu without scrolling (hamburger button only)
 	const toggleMenu = () => {
 		isOpen.value = !isOpen.value;

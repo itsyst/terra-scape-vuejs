@@ -1,6 +1,6 @@
 <template>
 	<Navigation />
-	<header class="header" id="main-header" :style="headerStyle">
+	<header class="header" id="home" :style="headerStyle">
 		<HeroLogo />
 		<HeroContent />
 	</header>

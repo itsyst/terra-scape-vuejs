@@ -1,5 +1,5 @@
 <template>
-	<div class="page-policy" id="page-policy">
+	<div class="page-policy" id="policy">
 		<h1 class="page-policy__title">Sekretesspolicy</h1>
 		<p class="page-policy__intro">
 			På Scapeterra är din integritet lika helig som de orörda vidderna vi
