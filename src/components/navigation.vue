@@ -26,8 +26,7 @@
 
 <script setup lang="ts">
 	import { ref, computed } from 'vue';
-	import { useRouter } from 'vue-router';
-	import { OhVueIcon } from 'oh-vue-icons';
+ 	import { OhVueIcon } from 'oh-vue-icons';
 	import { useIcons } from '../composables/useIcons';
 	import { getMenuConfig } from '../constants/menu-hamburger';
 
@@ -43,15 +42,14 @@
 
 	// Menu toggle state
 	const isOpen = ref(false);
-	const router = useRouter();
-
+ 
 	// Toggle menu without scrolling (hamburger button only)
 	const toggleMenu = () => {
 		isOpen.value = !isOpen.value;
 	};
 
 	// Close menu and scroll to section after navigation
-	const closeMenu = (sectionId: string) => {
+	const closeMenu = () => {
 		isOpen.value = false;
 	};
 </script>
