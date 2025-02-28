@@ -8,7 +8,8 @@ import {
     RiMentalHealthLine,
     BiGithub,
     BiLinkedin,
-    BiXSquareFill  
+    BiXSquareFill,
+    GiHamburgerMenu,
 
 } from 'oh-vue-icons/icons';
 
@@ -31,5 +32,11 @@ export function useIcons() {
         );
     };
 
-    return { featureIcons, socialMediaIcons };
+    const menuIcon = () => {
+        addIcons(
+            GiHamburgerMenu 
+        );
+    };
+
+    return { featureIcons, socialMediaIcons, menuIcon };
 }

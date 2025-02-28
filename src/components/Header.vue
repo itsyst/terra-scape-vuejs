@@ -1,4 +1,5 @@
 <template>
+	<Navigation />
 	<header class="header" id="main-header" :style="headerStyle">
 		<HeroLogo />
 		<HeroContent />
@@ -9,6 +10,7 @@
 	import { computed, onMounted } from 'vue';
 	import HeroLogo from './hero-logo.vue';
 	import HeroContent from './hero-content.vue';
+	import Navigation from './navigation.vue';
 	import { useHeroImage } from '../composables/useHeroImage';
 
 	const { headerImageUrl, loadHeroImage } = useHeroImage();

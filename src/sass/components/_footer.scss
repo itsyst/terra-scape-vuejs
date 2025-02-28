@@ -1,5 +1,6 @@
 @use '@/sass/abstracts/_variables' as vars;
 @use '@/sass/abstracts/_mixins' as mixins;
+@use 'sass:color';
 
 .footer {
 	display: flex;
@@ -229,6 +230,29 @@
 					fill: vars.$color-white !important;
 				}
 			}
+		}
+	}
+
+	&__scroll-up {
+		position: fixed;
+		bottom: 4rem;
+		right: 4rem;
+		background-color: vars.$color-primary;
+		color: vars.$color-white;
+		border: none;
+		border-radius: 50%;
+		width: 4rem;
+		height: 4rem;
+		font-size: 2rem;
+		cursor: pointer;
+		box-shadow: 0 0.2rem 0.4rem rgba(vars.$color-black, 0.3);
+		transition: transform 0.3s ease, background-color 0.3s ease;
+		z-index: 10;
+		/* Above other content */
+
+		&:hover {
+			transform: scale(1.1);
+			background-color: color.adjust(vars.$color-black, $lightness: -10%);
 		}
 	}
 }

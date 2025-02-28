@@ -13,15 +13,33 @@
 
 <script setup lang="ts">
 	import { ref } from 'vue';
+	import { useRouter, useRoute } from 'vue-router'; // Add routing utilities
 	import Button from './button.vue';
 
 	const main = ref('Gränslös');
 	const sub = ref('Upptäck Din Naturliga Frihet');
+	const router = useRouter(); // For navigation
+	const route = useRoute(); // To check current route
 
 	const scrollToTours = () => {
-		const tourSection = document.getElementById('tour-section');
-		if (tourSection) {
-			tourSection.scrollIntoView({ behavior: 'smooth' });
+		if (route.path !== '/') {
+			// If not on home, navigate to home first
+			router.push('/');
+			// Scroll after navigation completes
+			router.afterEach(() => {
+				setTimeout(() => {
+					const tourSection = document.getElementById('tour-section');
+					if (tourSection) {
+						tourSection.scrollIntoView({ behavior: 'smooth' });
+					}
+				}, 100); // Small delay to ensure the DOM is ready
+			});
+		} else {
+			// If already on home, scroll directly
+			const tourSection = document.getElementById('tour-section');
+			if (tourSection) {
+				tourSection.scrollIntoView({ behavior: 'smooth' });
+			}
 		}
 	};
 </script>

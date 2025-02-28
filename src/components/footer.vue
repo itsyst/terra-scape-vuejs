@@ -58,13 +58,15 @@
 			<nav class="footer__nav">
 				<ul class="footer__nav-items">
 					<li class="footer__nav-item">
-						<a href="#" class="footer__nav-item--link">Om oss</a> </li
+						<a href="/about" class="footer__nav-item--link">Om oss</a> </li
 					>|
 					<li class="footer__nav-item">
-						<a href="#" class="footer__nav-item--link">Kontakta oss</a> </li
+						<a href="/contact" class="footer__nav-item--link"
+							>Kontakta oss</a
+						> </li
 					>|
 					<li class="footer__nav-item">
-						<a href="#" class="footer__nav-item--link">Sekretesspolicy</a>
+						<a href="/policy" class="footer__nav-item--link">Sekretesspolicy</a>
 					</li>
 				</ul>
 			</nav>
@@ -103,6 +105,19 @@
 				</div>
 			</div>
 		</section>
+		<!-- Scroll Up Button -->
+		<button class="footer__scroll-up" @click="scrollToHeader">
+			<svg
+				width="25"
+				height="25"
+				viewBox="0 0 24 24"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="stroke-[2] relative"
+			>
+				<path d="M5 11L12 4M12 4L19 11M12 4V21" stroke="white"></path>
+			</svg>
+		</button>
 	</footer>
 </template>
 
@@ -151,6 +166,13 @@
 		setTimeout(() => {
 			subscriptionStatus.value = '';
 		}, 5000);
+	};
+
+	const scrollToHeader = () => {
+		const header = document.getElementById('main-header');
+		if (header) {
+			header.scrollIntoView({ behavior: 'smooth' });
+		}
 	};
 </script>
 

@@ -35,7 +35,7 @@ export function usePayPal() {
 
 			// Window dimensions
 			const width = 500;
-			const height = 800;
+			const height = 700;
 
 			// Calculate position to center the window
 			const left = (window.screen.width - width) / 2;
