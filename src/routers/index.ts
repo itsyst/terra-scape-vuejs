@@ -13,17 +13,17 @@ const routes: RouteRecordRaw[] = [
 	},
 	{
 		path: '/about',
-		name: 'om-oss',
+		name: 'about',
 		component: About
 	},
 	{
 		path: '/contact',
-		name: 'kontakta-oss',
+		name: 'contact',
 		component: Contact
 	},
 	{
 		path: '/policy',
-		name: 'sekretesspolicy',
+		name: 'policy',
 		component: Policy
 	}
 ];
@@ -35,10 +35,10 @@ const router = createRouter({
 		if (to.hash) {
 			return {
 				el: to.hash, // Scroll to the element with the matching ID
-				behavior: 'smooth'  
+				behavior: 'smooth'
 			};
 		}
-		return { top: 0 }; 
+		return { top: 0 };
 	}
 });
 

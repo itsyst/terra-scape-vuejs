@@ -58,15 +58,19 @@
 			<nav class="footer__nav">
 				<ul class="footer__nav-items">
 					<li class="footer__nav-item">
-						<a href="/about" class="footer__nav-item--link">Om oss</a> </li
-					>|
-					<li class="footer__nav-item">
-						<a href="/contact" class="footer__nav-item--link"
-							>Kontakta oss</a
+						<router-link href="/about" class="footer__nav-item--link"
+							>Om oss</router-link
 						> </li
 					>|
 					<li class="footer__nav-item">
-						<a href="/policy" class="footer__nav-item--link">Sekretesspolicy</a>
+						<router-link to="/contact" class="footer__nav-item--link"
+							>Kontakta oss</router-link
+						> </li
+					>|
+					<li class="footer__nav-item">
+						<router-link to="/policy" class="footer__nav-item--link"
+							>Sekretesspolicy</router-link
+						>
 					</li>
 				</ul>
 			</nav>
@@ -169,7 +173,7 @@
 	};
 
 	const scrollToHeader = () => {
-        const header = document.getElementById('home');
+		const header = document.getElementById('home');
 		if (header) {
 			header.scrollIntoView({ behavior: 'smooth' });
 		}
