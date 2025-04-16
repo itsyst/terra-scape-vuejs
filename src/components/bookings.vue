@@ -52,7 +52,6 @@
 		name: string;
 		email: string;
 	}) => {
-		console.log(submittedFormData)
 		if (selectedBooking.value) {
 			formData.value.name = submittedFormData.name;
 			formData.value.email = submittedFormData.email;

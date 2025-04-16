@@ -2,7 +2,8 @@
 import { Cloudinary } from '@cloudinary/url-gen';
 import { scale } from '@cloudinary/url-gen/actions/resize';
 import { ref } from 'vue';
-import type { FormImageType } from '../types/form';
+import type { ImageType } from '../types/ImageType';
+
 // Initialize Cloudinary with cloud name from environment variables
 const cld = new Cloudinary({
 	cloud: {
@@ -17,7 +18,7 @@ export function useFormImage() {
 	const formImageUrl = ref<string>('');
 	const fallbackImage = import.meta.env.VITE_FALLBACK_IMAGE_URL;
 
-	const loadFormImage = async (type: FormImageType = 'FORM') => {
+	const loadFormImage = async (type: ImageType = 'FORM') => {
 		try {
 			// Get the Cloudinary public ID from environment variables
 			const envKey = `VITE_CLOUDINARY_${type}_ID`;
