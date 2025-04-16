@@ -1,21 +1,16 @@
-// src/composables/useFeatureImage.ts
 import { ref } from 'vue';
-import { storage } from '../utils/config';
- 
+import { useCloudinaryImage } from './useCloudinaryImage';
+
 export function useFeatureImage() {
     const featureImageUrl = ref('');
-    const fallbackImage = import.meta.env.VITE_FALLBACK_IMAGE_URL;
+    const { fetchImage } = useCloudinaryImage();
 
     const loadFeatureImage = async () => {
-        try {
-            featureImageUrl.value = await storage.getFilePreview(
-                import.meta.env.VITE_APPWRITE_BUCKET_ID,
-                import.meta.env.VITE_APPWRITE_FEATURES_ID
-            );
-        } catch (error) {
-            console.error('Feature image load failed:', error);
-            featureImageUrl.value = fallbackImage;
-        }
+        featureImageUrl.value = await fetchImage('FEATURES', {
+            width: 1200, // Adjust as needed
+            height: 600,
+            crop: 'scale',
+        });
     };
 
     return { featureImageUrl, loadFeatureImage };

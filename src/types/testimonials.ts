@@ -1,10 +1,6 @@
-export type TestimonialType =
-	| 'TESTIMONIAL01'
-	| 'TESTIMONIAL02'
-	| 'TESTIMONIAL03'
-	| 'TESTIMONIAL04'
-	| 'TESTIMONIAL05'
-	| 'TESTIMONIAL06';
+// types/testimonials.ts
+
+import type { ImageType } from "./ImageType";
 
 export interface Testimonial {
 	id: number;
@@ -13,5 +9,5 @@ export interface Testimonial {
 	name: string;
 	role: string;
 	avatar?: string;
-	type: TestimonialType;
+	type: ImageType;
 }

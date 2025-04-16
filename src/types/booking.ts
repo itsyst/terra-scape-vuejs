@@ -1,5 +1,6 @@
 // types/booking.ts
-export type BookingType = 'SNOW' | 'MOUNTAIN' | 'CAMPING' | 'PIRATE';
+
+import type { ImageType } from "./ImageType";
 
 export interface Booking {
     heading: string;
@@ -13,5 +14,5 @@ export interface Booking {
     sleeping: string;
     price: number;
     backgroundColor: string;
-    type: BookingType;
+    type: ImageType;
 }

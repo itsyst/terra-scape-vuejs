@@ -1,25 +1,33 @@
- // src/composables/useFetchTestimonials.ts
 import { ref } from 'vue';
 import { TESTIMONIAL_CONFIG } from '../constants/testimonials';
- import { useImageFetcher } from './useImageFetcher';
+import { useCloudinaryImage } from './useCloudinaryImage';
 import type { Testimonial } from '../types/testimonials';
 
 export function useFetchTestimonials() {
     const testimonials = ref<Testimonial[]>([]);
-    const { fetchImage } = useImageFetcher();
+    const { fetchImage } = useCloudinaryImage();
 
     const loadTestimonials = async () => {
         try {
-            const imageRequests = TESTIMONIAL_CONFIG.map((testimonial) => fetchImage(testimonial.type));
+            // Generate image URLs for each testimonial
+            const imagePromises = TESTIMONIAL_CONFIG.map((testimonial) =>
+                fetchImage(testimonial.type, {
+                    width: 100,
+                    height: 100,
+                    crop: 'scale',
+                })
+            );
 
-            const images = await Promise.all(imageRequests);
+            // Wait for all image URLs to be generated
+            const images = await Promise.all(imagePromises);
 
+            // Map configurations to testimonials with src URLs
             testimonials.value = TESTIMONIAL_CONFIG.map((config, index) => ({
                 ...config,
-                src: images[index]
+                src: images[index],
             }));
         } catch (error) {
-            console.error('Tour loading failed:', error);
+            console.error('Testimonials loading failed:', error);
             testimonials.value = [];
         }
     };

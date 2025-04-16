@@ -1,6 +1,6 @@
 import type { Testimonial } from '../types/testimonials';
 
-export const TESTIMONIAL_CONFIG: Omit<Testimonial, 'avatar'>[] = [
+export const TESTIMONIAL_CONFIG: Omit<Testimonial, 'src'>[] = [
 	{
 		id: 1,
 		header: 'Exceptional Service Speed 🚀',
